@@ -8,5 +8,5 @@ By selecting an item shows full details
 Basic sharing capabilities (copy, email, Twitter)
 "Save favorite” capability storing user selected items locally using Core Data
 
-Supports both landscape and portrait orientation on iPad
+Supports both landscape and portrait orientation on iPad. 
 Uses the latest available iOS SDK with deployment target to 7.0
