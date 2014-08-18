@@ -22,6 +22,17 @@
 		B2821C28199D9CB000E964C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2821C0C199D9CB000E964C3 /* CoreData.framework */; };
 		B2821C30199D9CB000E964C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2821C2E199D9CB000E964C3 /* InfoPlist.strings */; };
 		B2821C32199D9CB000E964C3 /* RSS_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2821C31199D9CB000E964C3 /* RSS_ReaderTests.m */; };
+		B2821C3E199D9D5800E964C3 /* PMMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2821C3C199D9D5800E964C3 /* PMMainTableViewController.m */; };
+		B2821C3F199D9D5800E964C3 /* PMMainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2821C3D199D9D5800E964C3 /* PMMainTableViewController.xib */; };
+		B2821C49199DDED900E964C3 /* PMDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2821C47199DDED900E964C3 /* PMDetailsViewController.m */; };
+		B2821C4A199DDED900E964C3 /* PMDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2821C48199DDED900E964C3 /* PMDetailsViewController.xib */; };
+		B2AF396A19A1081E0001B535 /* PMFavesDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */; };
+		B2AF396B19A1081E0001B535 /* PMFavesDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */; };
+		B2B3BEE219A072A800B2FC37 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B3BEE119A072A800B2FC37 /* App.m */; };
+		B2B3BEE919A0AF8E00B2FC37 /* PMFavesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B3BEE719A0AF8E00B2FC37 /* PMFavesTableViewController.m */; };
+		B2B3BEEA19A0AF8E00B2FC37 /* PMFavesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B3BEE819A0AF8E00B2FC37 /* PMFavesTableViewController.xib */; };
+		B2CBAE71199FF58A004A244C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CBAE70199FF58A004A244C /* Social.framework */; };
+		B2CBAE73199FF594004A244C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CBAE72199FF594004A244C /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +64,22 @@
 		B2821C2D199D9CB000E964C3 /* RSS_ReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSS_ReaderTests-Info.plist"; sourceTree = "<group>"; };
 		B2821C2F199D9CB000E964C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2821C31199D9CB000E964C3 /* RSS_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSS_ReaderTests.m; sourceTree = "<group>"; };
+		B2821C3B199D9D5800E964C3 /* PMMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMMainTableViewController.h; sourceTree = "<group>"; };
+		B2821C3C199D9D5800E964C3 /* PMMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMainTableViewController.m; sourceTree = "<group>"; };
+		B2821C3D199D9D5800E964C3 /* PMMainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMMainTableViewController.xib; sourceTree = "<group>"; };
+		B2821C46199DDED900E964C3 /* PMDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDetailsViewController.h; sourceTree = "<group>"; };
+		B2821C47199DDED900E964C3 /* PMDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDetailsViewController.m; sourceTree = "<group>"; };
+		B2821C48199DDED900E964C3 /* PMDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMDetailsViewController.xib; sourceTree = "<group>"; };
+		B2AF396719A1081E0001B535 /* PMFavesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMFavesDetailsViewController.h; sourceTree = "<group>"; };
+		B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMFavesDetailsViewController.m; sourceTree = "<group>"; };
+		B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMFavesDetailsViewController.xib; sourceTree = "<group>"; };
+		B2B3BEE019A072A800B2FC37 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		B2B3BEE119A072A800B2FC37 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		B2B3BEE619A0AF8E00B2FC37 /* PMFavesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMFavesTableViewController.h; sourceTree = "<group>"; };
+		B2B3BEE719A0AF8E00B2FC37 /* PMFavesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMFavesTableViewController.m; sourceTree = "<group>"; };
+		B2B3BEE819A0AF8E00B2FC37 /* PMFavesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMFavesTableViewController.xib; sourceTree = "<group>"; };
+		B2CBAE70199FF58A004A244C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B2CBAE72199FF594004A244C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CBAE73199FF594004A244C /* MessageUI.framework in Frameworks */,
+				B2CBAE71199FF58A004A244C /* Social.framework in Frameworks */,
 				B2821C09199D9CB000E964C3 /* CoreGraphics.framework in Frameworks */,
 				B2821C0D199D9CB000E964C3 /* CoreData.framework in Frameworks */,
 				B2821C0B199D9CB000E964C3 /* UIKit.framework in Frameworks */,
@@ -103,6 +132,8 @@
 		B2821C05199D9CB000E964C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2CBAE72199FF594004A244C /* MessageUI.framework */,
+				B2CBAE70199FF58A004A244C /* Social.framework */,
 				B2821C06199D9CB000E964C3 /* Foundation.framework */,
 				B2821C08199D9CB000E964C3 /* CoreGraphics.framework */,
 				B2821C0A199D9CB000E964C3 /* UIKit.framework */,
@@ -117,8 +148,22 @@
 			children = (
 				B2821C17199D9CB000E964C3 /* PMAppDelegate.h */,
 				B2821C18199D9CB000E964C3 /* PMAppDelegate.m */,
+				B2821C3B199D9D5800E964C3 /* PMMainTableViewController.h */,
+				B2821C3C199D9D5800E964C3 /* PMMainTableViewController.m */,
+				B2821C3D199D9D5800E964C3 /* PMMainTableViewController.xib */,
+				B2821C46199DDED900E964C3 /* PMDetailsViewController.h */,
+				B2821C47199DDED900E964C3 /* PMDetailsViewController.m */,
+				B2821C48199DDED900E964C3 /* PMDetailsViewController.xib */,
+				B2B3BEE619A0AF8E00B2FC37 /* PMFavesTableViewController.h */,
+				B2B3BEE719A0AF8E00B2FC37 /* PMFavesTableViewController.m */,
+				B2B3BEE819A0AF8E00B2FC37 /* PMFavesTableViewController.xib */,
+				B2AF396719A1081E0001B535 /* PMFavesDetailsViewController.h */,
+				B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */,
+				B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */,
 				B2821C1D199D9CB000E964C3 /* Images.xcassets */,
 				B2821C1A199D9CB000E964C3 /* RSS_Reader.xcdatamodeld */,
+				B2B3BEE019A072A800B2FC37 /* App.h */,
+				B2B3BEE119A072A800B2FC37 /* App.m */,
 				B2821C0F199D9CB000E964C3 /* Supporting Files */,
 			);
 			path = RSS_Reader;
@@ -228,8 +273,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AF396B19A1081E0001B535 /* PMFavesDetailsViewController.xib in Resources */,
 				B2821C13199D9CB000E964C3 /* InfoPlist.strings in Resources */,
+				B2B3BEEA19A0AF8E00B2FC37 /* PMFavesTableViewController.xib in Resources */,
 				B2821C1E199D9CB000E964C3 /* Images.xcassets in Resources */,
+				B2821C4A199DDED900E964C3 /* PMDetailsViewController.xib in Resources */,
+				B2821C3F199D9D5800E964C3 /* PMMainTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AF396A19A1081E0001B535 /* PMFavesDetailsViewController.m in Sources */,
+				B2B3BEE919A0AF8E00B2FC37 /* PMFavesTableViewController.m in Sources */,
 				B2821C15199D9CB000E964C3 /* main.m in Sources */,
+				B2B3BEE219A072A800B2FC37 /* App.m in Sources */,
+				B2821C49199DDED900E964C3 /* PMDetailsViewController.m in Sources */,
 				B2821C1C199D9CB000E964C3 /* RSS_Reader.xcdatamodeld in Sources */,
 				B2821C19199D9CB000E964C3 /* PMAppDelegate.m in Sources */,
+				B2821C3E199D9D5800E964C3 /* PMMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -372,6 +426,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSS_Reader/RSS_Reader-Prefix.pch";
 				INFOPLIST_FILE = "RSS_Reader/RSS_Reader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,6 +440,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSS_Reader/RSS_Reader-Prefix.pch";
 				INFOPLIST_FILE = "RSS_Reader/RSS_Reader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -449,6 +505,7 @@
 				B2821C37199D9CB000E964C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2821C38199D9CB000E964C3 /* Build configuration list for PBXNativeTarget "RSS_ReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +514,7 @@
 				B2821C3A199D9CB000E964C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

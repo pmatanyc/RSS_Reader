@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PMMainTableViewController : UITableViewController
+@interface PMMainTableViewController : UITableViewController<NSURLConnectionDelegate>
+
+{
+    NSMutableData *_responseData;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSArray *names;
+@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSMutableArray *imageURLs;
+
+@property(strong, nonatomic) NSArray *allEntries;
 
 @end

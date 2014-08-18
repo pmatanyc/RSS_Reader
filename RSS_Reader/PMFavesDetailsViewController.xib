@@ -1,21 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PMFavesDetailsViewController">
             <connections>
+                <outlet property="artistLabel" destination="qfa-GV-d4Q" id="Gcm-P4-7oJ"/>
+                <outlet property="categoryLabel" destination="e6l-5t-iuF" id="R9Y-wf-tOr"/>
+                <outlet property="imageView" destination="OP6-5D-2dS" id="BkG-D8-NDy"/>
+                <outlet property="nameLabel" destination="oVa-MT-A0x" id="lTI-n9-k63"/>
+                <outlet property="priceLabel" destination="Mql-yD-sor" id="ymj-mr-aB7"/>
+                <outlet property="summaryTextView" destination="LNd-o0-Xpy" id="6kO-BU-uaP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-yD-sor">
+                    <rect key="frame" x="148" y="166" width="160" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="summary" translatesAutoresizingMaskIntoConstraints="NO" id="LNd-o0-Xpy">
+                    <rect key="frame" x="20" y="240" width="280" height="225"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                </textView>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMf-2r-JnZ">
+                    <rect key="frame" x="205" y="209" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Share">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="shareButtonPressed:" destination="-1" eventType="touchUpInside" id="shI-f4-Alh"/>
+                    </connections>
+                </button>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Artist" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="qfa-GV-d4Q">
+                    <rect key="frame" x="148" y="126" width="160" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="oVa-MT-A0x">
+                    <rect key="frame" x="148" y="87" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-5D-2dS">
+                    <rect key="frame" x="28" y="87" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="LnY-Xa-QF6"/>
+                        <constraint firstAttribute="width" constant="100" id="upC-2O-FhI"/>
+                    </constraints>
+                </imageView>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-Yq-n9P">
+                    <rect key="frame" x="55" y="209" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="iTunes">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="iTunesButtonPressed:" destination="-1" eventType="touchUpInside" id="nH6-us-eG5"/>
+                    </connections>
+                </button>
+                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-5t-iuF">
+                    <rect key="frame" x="148" y="146" width="160" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LNd-o0-Xpy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3X4-AE-GdP"/>
+                <constraint firstAttribute="centerX" secondItem="e6l-5t-iuF" secondAttribute="centerX" constant="-68" id="3pv-rd-W3f"/>
+                <constraint firstAttribute="centerX" secondItem="OP6-5D-2dS" secondAttribute="centerX" constant="82" id="4Qa-PV-xuG"/>
+                <constraint firstAttribute="centerX" secondItem="qfa-GV-d4Q" secondAttribute="centerX" constant="-80" id="6Dh-sG-idZ"/>
+                <constraint firstAttribute="bottom" secondItem="LNd-o0-Xpy" secondAttribute="bottom" constant="20" id="8Ae-Me-WEH"/>
+                <constraint firstAttribute="trailing" secondItem="LNd-o0-Xpy" secondAttribute="trailing" constant="20" id="94T-as-ZAr"/>
+                <constraint firstItem="e6l-5t-iuF" firstAttribute="leading" secondItem="OP6-5D-2dS" secondAttribute="trailing" constant="20" id="CJt-n3-SfV"/>
+                <constraint firstAttribute="centerX" secondItem="Mql-yD-sor" secondAttribute="centerX" constant="-68" id="GTd-gk-1Ya"/>
+                <constraint firstAttribute="centerX" secondItem="Mql-yD-sor" secondAttribute="centerX" constant="-68" id="MIZ-b2-aRl"/>
+                <constraint firstItem="OP6-5D-2dS" firstAttribute="centerX" secondItem="wYa-Yq-n9P" secondAttribute="centerX" id="NP5-Lc-egS"/>
+                <constraint firstItem="qfa-GV-d4Q" firstAttribute="leading" secondItem="OP6-5D-2dS" secondAttribute="trailing" constant="20" id="PMA-ML-RpT"/>
+                <constraint firstItem="LNd-o0-Xpy" firstAttribute="top" secondItem="uMf-2r-JnZ" secondAttribute="bottom" constant="10" id="Zkm-Kt-u73"/>
+                <constraint firstItem="Mql-yD-sor" firstAttribute="leading" secondItem="OP6-5D-2dS" secondAttribute="trailing" constant="20" id="imZ-9B-Cok"/>
+                <constraint firstItem="e6l-5t-iuF" firstAttribute="centerX" secondItem="uMf-2r-JnZ" secondAttribute="centerX" id="u7c-Sk-kHz"/>
+                <constraint firstItem="oVa-MT-A0x" firstAttribute="leading" secondItem="OP6-5D-2dS" secondAttribute="trailing" constant="20" id="zUN-L0-xvl"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
