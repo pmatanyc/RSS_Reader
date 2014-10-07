@@ -39,8 +39,12 @@
     
     self.navigationItem.title = @"App Details";
     
+    [self setUpData];
+}
+
+-(void)setUpData{
+    
     NSArray *details = [self.allEntries objectAtIndex:self.index];
-//    NSLog(@"%@", details);
     
     //get image async-ly
     NSArray *urlArray = [details valueForKeyPath:@"im:image"];
@@ -64,7 +68,7 @@
     self.iTunesURL = [details valueForKeyPath:@"link.attributes.href"];
     self.summary = [details valueForKeyPath:@"summary.label"];
     
-    
+    //dislays data in UI
     self.nameLabel.text = self.name;
     self.artistLabel.text = self.artist;
     self.categoryLabel.text = self.category;
@@ -74,6 +78,13 @@
     
     [self initModelContext];
     
+    [self checkWhetherDataIsSaved];
+    
+}
+
+-(void)checkWhetherDataIsSaved{
+    
+    //Checks whether app is in core data, and if so, disables Save button
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *entity = [[self.managedObjectModel entitiesByName] objectForKey:@"App"];
     [request setEntity:entity];
@@ -90,7 +101,7 @@
         self.saveButton.enabled = NO;
         NSLog(@"%@ is already saved!", self.name);
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,8 +138,7 @@
                     {
                         SLComposeViewController *fbPostSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
                         [fbPostSheet setInitialText: [NSString stringWithFormat:@"Check out this great game I'm hooked on: %@! %@", app.name, app.iTunesURL]];
-//                        how to deal with a redirect?? currently, it is ignored.
-//                        [fbPostSheet addURL:[NSURL URLWithString:app.iTunesURL]];
+
                         [self presentViewController:fbPostSheet animated:YES completion:nil];
                     }
                     else
@@ -149,7 +159,7 @@
                     {
                         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
                         [tweetSheet setInitialText:[NSString stringWithFormat: @"Check out this great app I'm hooked on: %@! %@", app.name, app.iTunesURL]];
-//                        [tweetSheet addURL:[NSURL URLWithString:app.iTunesURL]];
+
                         [self presentViewController:tweetSheet animated:YES completion:nil];
                     }
                     else
@@ -189,6 +199,7 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     
+    //creates instance of model object and saves to Core Data
         app = [NSEntityDescription insertNewObjectForEntityForName:@"App" inManagedObjectContext:self.managedObjectContext];
     
         app.imageURL = self.imageURL;

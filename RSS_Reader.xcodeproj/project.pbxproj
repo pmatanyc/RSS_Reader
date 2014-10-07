@@ -160,10 +160,10 @@
 				B2AF396719A1081E0001B535 /* PMFavesDetailsViewController.h */,
 				B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */,
 				B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */,
-				B2821C1D199D9CB000E964C3 /* Images.xcassets */,
-				B2821C1A199D9CB000E964C3 /* RSS_Reader.xcdatamodeld */,
 				B2B3BEE019A072A800B2FC37 /* App.h */,
 				B2B3BEE119A072A800B2FC37 /* App.m */,
+				B2821C1D199D9CB000E964C3 /* Images.xcassets */,
+				B2821C1A199D9CB000E964C3 /* RSS_Reader.xcdatamodeld */,
 				B2821C0F199D9CB000E964C3 /* Supporting Files */,
 			);
 			path = RSS_Reader;

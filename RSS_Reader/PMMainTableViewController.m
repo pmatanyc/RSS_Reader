@@ -26,6 +26,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     self.navigationItem.title = @"Top Grossing Apps";
     UIBarButtonItem *favorites = [[UIBarButtonItem alloc]initWithTitle:@"Favorites" style:UIBarButtonItemStylePlain target:self action:@selector(favoritesButtonPressed:)];
     self.navigationItem.rightBarButtonItem = favorites;
@@ -79,6 +80,7 @@
 
     // Configure the cell...
     
+    cell.textLabel.numberOfLines = 2;
     cell.textLabel.text = [NSString stringWithFormat:@"%i. %@",indexPath.row + 1,[self.names objectAtIndex:indexPath.row]];
     cell.detailTextLabel.text = [self.categories objectAtIndex:indexPath.row];
     cell.imageView.image = nil;
@@ -99,66 +101,22 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
     
     PMDetailsViewController *detailViewController = [[PMDetailsViewController alloc] initWithNibName:@"PMDetailsViewController" bundle:nil];
     
     // Pass the selected object to the new view controller.
-    
     detailViewController.allEntries = self.allEntries;
-//    NSLog(@"%i", [self.allEntries count]);
-    
     detailViewController.index = indexPath.row;
     
-    // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+#pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     // A response has been received, this is where we initialize the instance var you created
@@ -200,11 +158,11 @@
          self.imageURLs = [[NSMutableArray alloc]init];
         
         for (NSArray *urls in urlArray) {
-    //using first images, as it is smallest
+    //using first image, as it is smallest
             NSString *url = [urls objectAtIndex:0];
             [self.imageURLs addObject: url];
         }
-//         NSLog(@"%@", self.imageURLs);
+        
     }
     [self.tableView reloadData];
 }

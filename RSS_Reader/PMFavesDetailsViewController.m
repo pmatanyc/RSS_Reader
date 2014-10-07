@@ -29,6 +29,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     NSLog(@"%@", self.app);
+    [self setUpData];
+    
+}
+
+-(void)setUpData{
     
     self.nameLabel.text = self.app.name;
     self.artistLabel.text = self.app.artist;
@@ -47,6 +52,9 @@
         });
         
     });
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
