@@ -8,6 +8,7 @@
 
 #import <Social/Social.h>
 #import "PMFavesDetailsViewController.h"
+#import "App.h"
 
 @interface PMFavesDetailsViewController ()<UIActionSheetDelegate>
 
@@ -19,8 +20,10 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -28,12 +31,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"%@", self.app);
-    [self setUpData];
+
+    [self loadData];
     
 }
 
--(void)setUpData{
+-(void)loadData{
     
     self.nameLabel.text = self.app.name;
     self.artistLabel.text = self.app.artist;
@@ -52,8 +55,6 @@
         });
         
     });
-
-    
     
 }
 
@@ -166,6 +167,7 @@
         default:
             break;
     }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

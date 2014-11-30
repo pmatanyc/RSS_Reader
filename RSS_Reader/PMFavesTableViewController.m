@@ -8,13 +8,11 @@
 
 #import "PMFavesTableViewController.h"
 #import "PMFavesDetailsViewController.h"
+#import "PMDataServices.h"
 
 @interface PMFavesTableViewController ()
 
-//Core Data
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(nonatomic, strong)PMDataServices *coreDataServices;
 
 @end
 
@@ -24,15 +22,18 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    [self initModelContext];
+    self.coreDataServices = [PMDataServices new];
+    [self.coreDataServices initModelContext];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.title = @"My Favorites";
     [self loadData];
+}
+
+-(void)loadData
+{
+    self.favorites = [self.coreDataServices fetchRequest];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,42 +42,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)initModelContext
-{
-    self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    NSString *path = [self archivePath];
-    NSURL *storeURL = [NSURL fileURLWithPath:path];
-    NSError *error = nil;
-    if(![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
-    {
-        [NSException raise:@"Open failed" format:@"Reason: %@", [error localizedDescription]];
-    }
-    self.managedObjectContext = [[NSManagedObjectContext alloc] init];
-    
-    [self.managedObjectContext setPersistentStoreCoordinator:psc];
-    
-}
-
-- (void)saveContext
-{
-    NSError *err = nil;
-    BOOL successful = [self.managedObjectContext save:&err];
-    if(!successful){
-        NSLog(@"Error saving: %@", [err localizedDescription]);
-    }
-    NSLog(@"Data Saved");
-}
-
-#pragma mark - Application's Documents directory
-
--(NSString*)archivePath
-{
-    NSArray *documentsDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [documentsDirectories objectAtIndex:0];
-//    NSLog(@"%@",documentsDirectory);
-    return [documentsDirectory stringByAppendingPathComponent:@"Apps.sqlite"];
-}
 
 #pragma mark - Table view data source
 
@@ -104,6 +69,7 @@
     
     App *app = [self.favorites objectAtIndex:indexPath.row];
     
+    cell.textLabel.numberOfLines = 2;
     cell.textLabel.text = app.name;
     cell.detailTextLabel.text = app.category;
     cell.imageView.image = nil;
@@ -133,62 +99,26 @@
 }
 
 
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
-        [self deleteObjectAtIndex:indexPath.row];
-        [self saveContext];
-    }
-}
-
--(void)loadData
-{
-    NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [[self.managedObjectModel entitiesByName] objectForKey:@"App"];
-    [request setEntity:entity];
-    
-    NSError *error = nil;
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
-    
-    if(!result){
-        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
-    }
-    
-    else{
+        [self.coreDataServices deleteObject:[self.favorites objectAtIndex:indexPath.row]];
+        [self.coreDataServices saveContext];
         
-        self.favorites = [[NSArray alloc]initWithArray:result];
-        NSLog(@"%d",[self.favorites count]);
+        [self loadData];
     }
-    [self.tableView reloadData];
 }
 
-
--(void)deleteObjectAtIndex:(int)index{
-    
-    App *app = [self.favorites objectAtIndex:index];
-    
-    [self.managedObjectContext deleteObject:app];
-    
-    [self loadData];
-}
-
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
+  
     PMFavesDetailsViewController *favesDetailsTVC = [[PMFavesDetailsViewController alloc] initWithNibName:@"PMFavesDetailsViewController" bundle:nil];
     
-    // Pass the selected object to the new view controller.
     favesDetailsTVC.app = [self.favorites objectAtIndex:indexPath.row];
-    
-    // Push the view controller.
+
     [self.navigationController pushViewController:favesDetailsTVC animated:YES];
 }
 

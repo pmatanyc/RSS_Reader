@@ -12,7 +12,6 @@
 @interface PMFavesTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *favorites;
-
 @property (strong, nonatomic) NSString *imageURL;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic)NSString *artist;

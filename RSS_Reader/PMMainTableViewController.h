@@ -7,19 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PMDataServices.h"
 
-@interface PMMainTableViewController : UITableViewController<NSURLConnectionDelegate>
-
-{
-    NSMutableData *_responseData;
-}
+@interface PMMainTableViewController : UITableViewController<NSURLConnectionDelegate, DataServicesProtocol>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSArray *names;
-@property (strong, nonatomic) NSArray *categories;
-@property (strong, nonatomic) NSMutableArray *imageURLs;
-
 @property(strong, nonatomic) NSArray *allEntries;
+
 
 @end

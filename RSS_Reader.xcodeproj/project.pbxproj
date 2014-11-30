@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B241F99B1A202D2D00AFC13C /* PMDataServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B241F99A1A202D2D00AFC13C /* PMDataServices.m */; };
+		B241F99E1A202FD200AFC13C /* PMEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = B241F99D1A202FD200AFC13C /* PMEntry.m */; };
 		B2821C07199D9CB000E964C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2821C06199D9CB000E964C3 /* Foundation.framework */; };
 		B2821C09199D9CB000E964C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2821C08199D9CB000E964C3 /* CoreGraphics.framework */; };
 		B2821C0B199D9CB000E964C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2821C0A199D9CB000E964C3 /* UIKit.framework */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B241F9991A202D2D00AFC13C /* PMDataServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataServices.h; sourceTree = "<group>"; };
+		B241F99A1A202D2D00AFC13C /* PMDataServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataServices.m; sourceTree = "<group>"; };
+		B241F99C1A202FD200AFC13C /* PMEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMEntry.h; sourceTree = "<group>"; };
+		B241F99D1A202FD200AFC13C /* PMEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMEntry.m; sourceTree = "<group>"; };
 		B2821C03199D9CB000E964C3 /* RSS_Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS_Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2821C06199D9CB000E964C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2821C08199D9CB000E964C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +116,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2099E391A2B9BC5002175B3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2821C3B199D9D5800E964C3 /* PMMainTableViewController.h */,
+				B2821C3C199D9D5800E964C3 /* PMMainTableViewController.m */,
+				B2821C3D199D9D5800E964C3 /* PMMainTableViewController.xib */,
+				B2821C46199DDED900E964C3 /* PMDetailsViewController.h */,
+				B2821C47199DDED900E964C3 /* PMDetailsViewController.m */,
+				B2821C48199DDED900E964C3 /* PMDetailsViewController.xib */,
+				B2B3BEE619A0AF8E00B2FC37 /* PMFavesTableViewController.h */,
+				B2B3BEE719A0AF8E00B2FC37 /* PMFavesTableViewController.m */,
+				B2B3BEE819A0AF8E00B2FC37 /* PMFavesTableViewController.xib */,
+				B2AF396719A1081E0001B535 /* PMFavesDetailsViewController.h */,
+				B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */,
+				B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B2099E3A1A2B9BE5002175B3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B2821C17199D9CB000E964C3 /* PMAppDelegate.h */,
+				B2821C18199D9CB000E964C3 /* PMAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B2099E3B1A2B9C25002175B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B241F99C1A202FD200AFC13C /* PMEntry.h */,
+				B241F99D1A202FD200AFC13C /* PMEntry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B241F99F1A205EFC00AFC13C /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				B2B3BEE019A072A800B2FC37 /* App.h */,
+				B2B3BEE119A072A800B2FC37 /* App.m */,
+				B2821C1A199D9CB000E964C3 /* RSS_Reader.xcdatamodeld */,
+			);
+			name = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		B2821BFA199D9CB000E964C3 = {
 			isa = PBXGroup;
 			children = (
@@ -146,24 +199,13 @@
 		B2821C0E199D9CB000E964C3 /* RSS_Reader */ = {
 			isa = PBXGroup;
 			children = (
-				B2821C17199D9CB000E964C3 /* PMAppDelegate.h */,
-				B2821C18199D9CB000E964C3 /* PMAppDelegate.m */,
-				B2821C3B199D9D5800E964C3 /* PMMainTableViewController.h */,
-				B2821C3C199D9D5800E964C3 /* PMMainTableViewController.m */,
-				B2821C3D199D9D5800E964C3 /* PMMainTableViewController.xib */,
-				B2821C46199DDED900E964C3 /* PMDetailsViewController.h */,
-				B2821C47199DDED900E964C3 /* PMDetailsViewController.m */,
-				B2821C48199DDED900E964C3 /* PMDetailsViewController.xib */,
-				B2B3BEE619A0AF8E00B2FC37 /* PMFavesTableViewController.h */,
-				B2B3BEE719A0AF8E00B2FC37 /* PMFavesTableViewController.m */,
-				B2B3BEE819A0AF8E00B2FC37 /* PMFavesTableViewController.xib */,
-				B2AF396719A1081E0001B535 /* PMFavesDetailsViewController.h */,
-				B2AF396819A1081E0001B535 /* PMFavesDetailsViewController.m */,
-				B2AF396919A1081E0001B535 /* PMFavesDetailsViewController.xib */,
-				B2B3BEE019A072A800B2FC37 /* App.h */,
-				B2B3BEE119A072A800B2FC37 /* App.m */,
+				B2099E3A1A2B9BE5002175B3 /* AppDelegate */,
+				B241F9991A202D2D00AFC13C /* PMDataServices.h */,
+				B241F99A1A202D2D00AFC13C /* PMDataServices.m */,
+				B2099E3B1A2B9C25002175B3 /* Model */,
+				B2099E391A2B9BC5002175B3 /* ViewControllers */,
 				B2821C1D199D9CB000E964C3 /* Images.xcassets */,
-				B2821C1A199D9CB000E964C3 /* RSS_Reader.xcdatamodeld */,
+				B241F99F1A205EFC00AFC13C /* CoreDataModel */,
 				B2821C0F199D9CB000E964C3 /* Supporting Files */,
 			);
 			path = RSS_Reader;
@@ -303,7 +345,9 @@
 				B2B3BEE219A072A800B2FC37 /* App.m in Sources */,
 				B2821C49199DDED900E964C3 /* PMDetailsViewController.m in Sources */,
 				B2821C1C199D9CB000E964C3 /* RSS_Reader.xcdatamodeld in Sources */,
+				B241F99E1A202FD200AFC13C /* PMEntry.m in Sources */,
 				B2821C19199D9CB000E964C3 /* PMAppDelegate.m in Sources */,
+				B241F99B1A202D2D00AFC13C /* PMDataServices.m in Sources */,
 				B2821C3E199D9D5800E964C3 /* PMMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

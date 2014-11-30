@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import "App.h"
+@class App;
 
 @interface PMFavesDetailsViewController : UIViewController< MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic)App *app;
-
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *artistLabel;
